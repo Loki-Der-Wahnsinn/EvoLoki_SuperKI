@@ -22,3 +22,5 @@ anthropic
 flaml
 scikit-learn
 pandas
+faiss-cpu
+llama-index-vector-stores-faiss
