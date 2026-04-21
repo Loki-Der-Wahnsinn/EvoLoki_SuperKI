@@ -1,0 +1,24 @@
+# EvoLoki SuperKI Requirements
+
+# EvoAgentX Core
+litellm
+
+# FreedomAI / AIO-Core-Alpha Legacy
+flask
+psutil
+requests
+colorama
+pynput
+pyautogui
+opencv-python
+sounddevice
+numpy
+
+# Internet Models & API Interfaces
+openai
+anthropic
+
+# AutoML Frameworks (for autonomous model building)
+flaml
+scikit-learn
+pandas

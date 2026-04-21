@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoLoki SuperKI Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+        
+        :root {
+            --bg-dark: #0a0c10;
+            --glass-bg: rgba(20, 24, 32, 0.6);
+            --neon-blue: #00f0ff;
+            --neon-purple: #8a2be2;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 240, 255, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(138, 43, 226, 0.08), transparent 25%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard-container {
+            width: 90%;
+            max-width: 1200px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        .status-badge {
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: rgba(0, 255, 136, 0.1);
+            color: #00ff88;
+            font-weight: 500;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-badge::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff88;
+            animation: blink 1.5s infinite;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        .panel {
+            background: rgba(0,0,0,0.2);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .panel:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .panel h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            color: var(--neon-blue);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .agent-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .agent-list li {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 3px solid var(--neon-purple);
+        }
+
+        .terminal {
+            background: #050608;
+            border-radius: 12px;
+            padding: 20px;
+            font-family: monospace;
+            height: 300px;
+            overflow-y: auto;
+            color: #00ff88;
+            border: 1px solid #1a1f26;
+        }
+
+        .terminal-line {
+            margin-bottom: 8px;
+            opacity: 0;
+            animation: fade-in 0.3s forwards;
+            line-height: 1.4;
+        }
+        
+        .terminal-line .prefix {
+            color: var(--neon-blue);
+            margin-right: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes pulse-glow {
+            0% { filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.4)); }
+            100% { filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.6)); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
+
+        /* Custom scrollbar for terminal */
+        .terminal::-webkit-scrollbar {
+            width: 8px;
+        }
+        .terminal::-webkit-scrollbar-track {
+            background: #050608; 
+        }
+        .terminal::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        .terminal::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header>
+            <h1>EvoLoki SuperKI 🧠</h1>
+            <div class="status-badge" id="conn-status">Online • Syncing</div>
+        </header>
+
+        <div class="grid-layout">
+            <!-- Left Column: Stats & Agents -->
+            <div class="left-col">
+                <div class="panel">
+                    <h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Swarm Telemetry</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="memory-counter">{{ memory_size }}</div>
+                            <div class="stat-label">Memory Nodes</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="cycle-counter">0</div>
+                            <div class="stat-label">Evolution Cycles</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="margin-top: 30px;">
+                    <h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Active Agents</h2>
+                    <ul class="agent-list" id="agent-list">
+                        <li><span>GenericAgent</span> <small style="color: #00ff88">Active</small></li>
+                        <li><span>Hermes</span> <small style="color: #00ff88">Active</small></li>
+                        <li><span>OpenClaw</span> <small style="color: rgba(255,255,255,0.4)">Standby</small></li>
+                        <li><span>AutoML_Engineer</span> <small style="color: rgba(255,255,255,0.4)">Standby</small></li>
+                        <li><span>Kimi_K2_6_Agent</span> <small style="color: rgba(255,255,255,0.4)">Standby</small></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Live Terminal -->
+            <div class="right-col">
+                <div class="panel" style="height: 100%; display: flex; flex-direction: column;">
+                    <h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg> Neural Cortex Log</h2>
+                    <div class="terminal" id="terminal">
+                        {% for log in logs %}
+                            <div class="terminal-line"><span class="prefix">root@evoloki:~#</span> {{ log }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const terminal = document.getElementById('terminal');
+        let cycles = 0;
+
+        function addLog(message) {
+            const line = document.createElement('div');
+            line.className = 'terminal-line';
+            line.innerHTML = `<span class="prefix">swarm@evoloki:~#</span> ${message}`;
+            terminal.appendChild(line);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        // Long-polling or Interval to fetch latest status
+        setInterval(() => {
+            fetch('/status')
+                .then(res => res.json())
+                .then(data => {
+                    // Update cycles visually
+                    cycles++;
+                    document.getElementById('cycle-counter').innerText = cycles;
+                    
+                    // Display new logs if they came in (simulated live tailing)
+                    if (Math.random() > 0.7) {
+                        const activities = [
+                            "Optimizing heuristic paths...",
+                            "Hermes_Agent analyzed new datastream.",
+                            "Self-Improvement script validated.",
+                            "Llama 405B proxy latency: 120ms",
+                            "AutoML: Testing gradient boosting tree..."
+                        ];
+                        addLog(activities[Math.floor(Math.random() * activities.length)]);
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('conn-status').innerText = 'Offline';
+                    document.getElementById('conn-status').style.color = '#ff3366';
+                    document.getElementById('conn-status').style.background = 'rgba(255, 51, 102, 0.1)';
+                    document.getElementById('conn-status').style.borderColor = 'rgba(255, 51, 102, 0.3)';
+                });
+        }, 2500);
+    </script>
+</body>
+</html>
