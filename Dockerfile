@@ -9,14 +9,14 @@ COPY . /app/
 RUN apt-get update && apt-get install -y gcc git python3-dev && rm -rf /var/lib/apt/lists/*
 
 # Install specific versions and requirements
-RUN pip install --upgrade pip
+RUN pip install --no-cache-dir --upgrade pip
 
 # Install the local EvoAgentX library directly
-RUN if [ -d "EvoAgentX" ]; then pip install -e ./EvoAgentX; fi
+RUN if [ -d "EvoAgentX" ]; then pip install --no-cache-dir -e ./EvoAgentX; fi
 
 # Install the rest of the SuperKI requirements
-RUN pip install -r requirements_superki.txt
-RUN pip install llama-index llama-index-graph-stores-neo4j
+RUN pip install --no-cache-dir -r requirements_superki.txt
+RUN pip install --no-cache-dir llama-index llama-index-graph-stores-neo4j
 
 # Expose the port Cloud Run provides
 EXPOSE 8080
