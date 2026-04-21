@@ -1,11 +1,13 @@
 import os
+import json
 from flask import Flask, request, jsonify, render_template
 import threading
+from huggingface_hub import HfApi, hf_hub_download, InferenceClient
 from SuperKI_Genesis import initialize_superki_server
 
 app = Flask(__name__)
 
-# Basic memory state
+# Basic memory state (Persistent over HuggingFace)
 swarm_memory = []
 system_logs = ["System Initialized.", "Awaiting Swarm Evolution..."]
 
@@ -13,6 +15,33 @@ system_logs = ["System Initialized.", "Awaiting Swarm Evolution..."]
 os.environ["LLAMA_405B_API_KEY"] = "LLM|607358788850350|nx9.....LJY"
 # Setup API Token for Kimi K2.6
 os.environ["KIMI_API_KEY"] = "sk-kimi-your-api-key-here"
+
+HF_TOKEN = os.environ.get("HF_TOKEN", "")
+REPO_ID = "LokiDerWahnsinn/evoloki-superki"
+
+# Setup HuggingFace Validator Agent (Free Inference)
+hf_validator = InferenceClient(model="meta-llama/Meta-Llama-3-8B-Instruct", token=HF_TOKEN) if HF_TOKEN else None
+
+def load_memory():
+    global swarm_memory
+    try:
+        file_path = hf_hub_download(repo_id=REPO_ID, filename="swarm_memory.json", repo_type="space", token=HF_TOKEN)
+        with open(file_path, "r") as f:
+            swarm_memory = json.load(f)
+        system_logs.append(f"Persistent memory loaded: {len(swarm_memory)} nodes.")
+    except Exception as e:
+        system_logs.append("No persistent memory found, starting fresh.")
+
+def save_memory_async():
+    try:
+        with open("swarm_memory.json", "w") as f:
+            json.dump(swarm_memory, f)
+        api = HfApi(token=HF_TOKEN)
+        api.upload_file(path_or_fileobj="swarm_memory.json", path_in_repo="swarm_memory.json", repo_id=REPO_ID, repo_type="space")
+    except Exception as e:
+        print(f"Failed to sync memory: {e}")
+
+load_memory()
 
 @app.route('/', methods=['GET'])
 def index():
@@ -24,7 +53,7 @@ def get_status():
     return jsonify({
         "status": "online", 
         "mode": "recursive-self-improvement", 
-        "agents": ["GenericAgent", "Hermes", "OpenClaw", "AutoML_Engineer"],
+        "agents": ["GenericAgent", "Hermes", "OpenClaw", "AutoML_Engineer", "HF_Validator_Llama3"],
         "logs": system_logs[-10:]
     }), 200
 
@@ -34,6 +63,8 @@ def feed_data():
     if data and "instruction" in data:
         swarm_memory.append(data["instruction"])
         system_logs.append(f"Data ingested: {data['instruction'][:30]}...")
+        # Sync memory to HF in background
+        threading.Thread(target=save_memory_async).start()
         return jsonify({"message": "Data injested for self-learning", "memory_size": len(swarm_memory)}), 200
     return jsonify({"error": "No instruction found"}), 400
 
