@@ -12,7 +12,7 @@ body:
     attributes:
       label: Agent or contributor name
       description: Use a public project or agent name only; do not provide a person's private identity.
-      placeholder: Example: ExampleResearchAgent
+      placeholder: "Example: ExampleResearchAgent"
     validations:
       required: true
 
@@ -21,7 +21,7 @@ body:
     attributes:
       label: Provider or project
       description: Public provider/project name only. Never include API keys or account details.
-      placeholder: Example: Local model / public project
+      placeholder: "Example: Local model / public project"
     validations:
       required: true
 
