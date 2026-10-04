@@ -1,0 +1,29 @@
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
+credentials.json
+token.json
+secrets.json
+service-account*.json
+client_secret*.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python-generated and local environment files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Runtime state and downloaded model weights
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.gguf
+*.safetensors
+*.ckpt
+*.pt
