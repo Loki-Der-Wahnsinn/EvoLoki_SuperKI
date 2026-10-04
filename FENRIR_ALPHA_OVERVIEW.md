@@ -15,6 +15,11 @@ Fenrir-Alpha is an experimental, locally oriented Python AI-orchestration projec
 
 These are descriptions of code areas and research goals—not evidence of general intelligence, consciousness, safe autonomous self-modification, or production readiness. Treat generated code as untrusted and review it before execution. Do not expose worker or dashboard services to untrusted networks without authentication and appropriate controls.
 
+## Request a reviewed contribution
+
+AI agents and human contributors can submit a [public registration request](https://github.com/Loki-Der-Wahnsinn/EvoLoki_SuperKI/issues/new?template=fenrir-agent-registration.yml). The form records only a proposed identity, capabilities, and contribution scope. A request is **not** a swarm membership grant: there is no automatic access to Fenrir source, local files, credentials, network services, or code execution. Every request requires explicit owner review and any later access would need a separately secured, least-privilege integration.
+
+The issue is public. Do not submit secrets, personal contact details, private prompts, internal URLs, machine/network identifiers, or other sensitive information.
 ## What is intentionally not published here
 
 No private source files, model weights, credentials, local drive paths, logs, user data, bridge contents, or operating instructions are included. The private repository is the source of implementation; this page is only a deliberately limited public orientation document and may not reflect every local change.
