@@ -7,6 +7,16 @@ sdk: docker
 pinned: false
 ---
 # EvoLoki SuperKI
+## Fenrir-Alpha: public AI-agent orchestration overview
+
+Fenrir-Alpha is a separate, private experimental Python AI-orchestration project. This public repository hosts a **curated overview and contributor context**—not the private Fenrir source code, model weights, runtime state, operational logs, credentials, or access to the running system.
+
+- [Fenrir-Alpha public overview](FENRIR_ALPHA_OVERVIEW.md)
+- [Shared context for AI and human contributors](FENRIR_PUBLIC_CONTEXT.md)
+- [Submit a public contribution request](https://github.com/Loki-Der-Wahnsinn/EvoLoki_SuperKI/issues/new?template=fenrir-agent-registration.yml)
+
+Relevant, code-grounded discovery terms include **Python AI orchestration**, **multi-agent systems**, **LLM/model routing**, **local LLM and GGUF integration**, **worker-node coordination**, **persistent memory**, and **sandboxed code experiments**. These describe project areas and research interests, not verified general intelligence, consciousness, production readiness, or safe autonomous self-modification. Public registration requests are proposals for owner review; they do not grant access or execute code.
+
 
 An experimental Python project exploring AI-agent orchestration, model-provider APIs, local Ollama workers, task dispatch, and learning/knowledge components.
 
@@ -25,10 +35,6 @@ Some code configures external model providers as well as a local Ollama worker. 
 ## Research topics and search terms
 
 This prototype includes **self-learning and knowledge components**, **AI agent evolution experiments**, **LLM orchestration**, and persistent-memory experiments. These are research topics, not evidence of validated autonomous self-improvement; review the code to assess what is implemented.
-## Fenrir-Alpha: public project overview
-
-See [FENRIR_ALPHA_OVERVIEW.md](FENRIR_ALPHA_OVERVIEW.md) for a curated, current high-level description of Fenrir-Alpha. The implementation and operational data are not included in this public project.
-
 ## Related public experiments
 
 - [AIO-Core-Alpha](https://github.com/Loki-Der-Wahnsinn/AIO-Core-Alpha) — experimental Python companion and worker-node project.
