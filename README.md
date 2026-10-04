@@ -25,6 +25,10 @@ Some code configures external model providers as well as a local Ollama worker. 
 ## Research topics and search terms
 
 This prototype includes **self-learning and knowledge components**, **AI agent evolution experiments**, **LLM orchestration**, and persistent-memory experiments. These are research topics, not evidence of validated autonomous self-improvement; review the code to assess what is implemented.
+## Fenrir-Alpha: public project overview
+
+See [FENRIR_ALPHA_OVERVIEW.md](FENRIR_ALPHA_OVERVIEW.md) for a curated, current high-level description of Fenrir-Alpha. The implementation and operational data are not included in this public project.
+
 ## Related public experiments
 
 - [AIO-Core-Alpha](https://github.com/Loki-Der-Wahnsinn/AIO-Core-Alpha) — experimental Python companion and worker-node project.
