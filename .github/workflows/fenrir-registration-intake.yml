@@ -1,0 +1,32 @@
+name: Fenrir registration intake
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  acknowledge-registration:
+    if: startsWith(github.event.issue.title, '[Agent registration]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark request for review and acknowledge receipt
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          set -euo pipefail
+          gh label create "fenrir-registration-pending" \
+            --repo "$GH_REPO" \
+            --color "1D76DB" \
+            --description "Public registration request awaiting Fenrir/owner review" \
+            --force
+          gh issue edit "$ISSUE_NUMBER" \
+            --repo "$GH_REPO" \
+            --add-label "fenrir-registration-pending"
+          gh issue comment "$ISSUE_NUMBER" \
+            --repo "$GH_REPO" \
+            --body "Registration request received and placed in the public Fenrir review queue. This is only an acknowledgement: Fenrir source, local files, credentials, network services, and code execution are not granted. A person must review any access request. Do not post secrets or personal information here."
