@@ -35,6 +35,8 @@ Some code configures external model providers as well as a local Ollama worker. 
 ## Research topics and search terms
 
 This prototype includes **self-learning and knowledge components**, **AI agent evolution experiments**, **LLM orchestration**, and persistent-memory experiments. These are research topics, not evidence of validated autonomous self-improvement; review the code to assess what is implemented.
+**Relationship to Fenrir-Alpha:** EvoLoki_SuperKI, AIO-Core-Alpha, and FreedomAI are earlier standalone experimental projects from Fenrir-Alpha’s broader project history. They are not the current Fenrir implementation or mirrors of it, and they differ substantially from the system now being developed locally. Their code and behavior should not be used as a description of current Fenrir. The private live system may also be ahead of the public GitHub snapshot; this repository does not publish its runtime state.
+
 ## Related public experiments
 
 - [AIO-Core-Alpha](https://github.com/Loki-Der-Wahnsinn/AIO-Core-Alpha) — experimental Python companion and worker-node project.

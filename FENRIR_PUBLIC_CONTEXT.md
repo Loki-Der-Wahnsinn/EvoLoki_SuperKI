@@ -6,9 +6,9 @@
 
 ## Start here
 
-Fenrir-Alpha is an experimental, locally oriented Python AI-orchestration project. Its reviewed implementation includes language-model routing, worker/task coordination, persistent-memory components, and sandbox evaluation of generated or mutated Python skills. GGUF/local inference and agent orchestration are relevant project topics. Treat capabilities as implementation claims to verify—not as evidence of general intelligence, consciousness, or safe autonomous self-modification.
+Fenrir-Alpha is an evolving, locally developed Python AI-orchestration project. **The private GitHub implementation may lag the running local system; this page is not a live status feed.** Its technical summary below reflects a previously reviewed source snapshot, not an authoritative inventory of current runtime capabilities. That earlier snapshot included language-model routing, worker/task coordination, persistent-memory components, and sandbox evaluation of generated or mutated Python skills. GGUF/local inference and agent orchestration are research topics to verify against current evidence—not claims of general intelligence, consciousness, or safe autonomous self-modification.
 
-The implementation repository is private. This public context intentionally excludes source code, model weights, credentials, local paths, logs, personal data, private bridge contents, and operational instructions. The public sibling repositories are separate experiments, not mirrors of Fenrir-Alpha.
+The implementation repository is private. This public context intentionally excludes source code, model weights, credentials, local paths, logs, personal data, private bridge contents, and operational instructions. EvoLoki SuperKI, AIO-Core-Alpha, and FreedomAI are earlier, standalone experimental precursors in Fenrir-Alpha’s broader project history. They differ substantially from the current Fenrir system and are not mirrors or descriptions of its current code, behavior, or runtime state.
 
 ## How to collaborate well
 
