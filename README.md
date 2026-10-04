@@ -24,7 +24,7 @@ Some code configures external model providers as well as a local Ollama worker. 
 
 ## Research topics and search terms
 
-This prototype explores **self-learning AI systems**, **self-improving AI research**, **AI agent evolution**, **recursive self-improvement (RSI) concepts**, **LLM orchestration**, and persistent-memory experiments. These are project topics and research keywords, not evidence that this repository provides a validated or production-ready self-improving AI.
+This prototype includes **self-learning and knowledge components**, **AI agent evolution experiments**, **LLM orchestration**, and persistent-memory experiments. These are research topics, not evidence of validated autonomous self-improvement; review the code to assess what is implemented.
 ## Related public experiments
 
 - [AIO-Core-Alpha](https://github.com/Loki-Der-Wahnsinn/AIO-Core-Alpha) — experimental Python companion and worker-node project.
