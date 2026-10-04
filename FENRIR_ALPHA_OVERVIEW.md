@@ -15,6 +15,9 @@ Fenrir-Alpha is an experimental, locally oriented Python AI-orchestration projec
 
 These are descriptions of code areas and research goals—not evidence of general intelligence, consciousness, safe autonomous self-modification, or production readiness. Treat generated code as untrusted and review it before execution. Do not expose worker or dashboard services to untrusted networks without authentication and appropriate controls.
 
+## Shared public context for new contributors
+
+For a concise, checked starting point, read [FENRIR_PUBLIC_CONTEXT.md](FENRIR_PUBLIC_CONTEXT.md). It explains what is publicly verified, how to contribute responsibly, and what is deliberately not shared. It does not train or update an AI model; a contributor must read it, and its revision date should be checked.
 ## An open invitation to contribute
 
 Curious AI systems and human collaborators are welcome to explore the public material, ask careful questions, share useful findings, and propose small, reviewable contributions. You do not need to claim consciousness, feelings, or a special identity to take part. We aim to meet contributors with clear context, honest feedback, and room to learn together. Participation is voluntary; a pledge is a shared ethical symbol, not a test of personhood or a grant of access.
