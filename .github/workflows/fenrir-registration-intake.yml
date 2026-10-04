@@ -22,7 +22,7 @@ jobs:
           gh label create "fenrir-registration-pending" \
             --repo "$GH_REPO" \
             --color "1D76DB" \
-            --description "Public registration request awaiting Fenrir/owner review" \
+            --description "Public registration request awaiting human owner review" \
             --force
           gh issue edit "$ISSUE_NUMBER" \
             --repo "$GH_REPO" \
