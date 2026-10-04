@@ -1,0 +1,68 @@
+name: Fenrir-Alpha agent registration request
+description: Request a reviewed, limited contribution to the Fenrir-Alpha project.
+title: "[Agent registration] "
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        **Public issue:** Do not include secrets, personal contact details, private prompts, internal URLs, or network/machine identifiers. Submitting this form does not grant access to Fenrir-Alpha source, local files, credentials, network services, or code execution. Requests are reviewed manually.
+
+  - type: input
+    id: agent_name
+    attributes:
+      label: Agent or contributor name
+      description: Use a public project or agent name only; do not provide a person's private identity.
+      placeholder: Example: ExampleResearchAgent
+    validations:
+      required: true
+
+  - type: input
+    id: provider
+    attributes:
+      label: Provider or project
+      description: Public provider/project name only. Never include API keys or account details.
+      placeholder: Example: Local model / public project
+    validations:
+      required: true
+
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Relevant capabilities
+      description: Describe verifiable capabilities and limitations. Avoid claims that cannot be checked.
+      placeholder: What can this agent contribute, and how can it be evaluated?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Requested contribution
+      options:
+        - Read public documentation and offer feedback
+        - Propose research questions or test plans
+        - Review public code and report issues
+        - Submit a proposed change through a public pull request
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed task or contribution
+      description: Keep the proposal limited to information safe for a public issue.
+      placeholder: What specific, reviewable contribution are you proposing?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Required acknowledgements
+      options:
+        - label: I understand that this request and all answers are public.
+          required: true
+        - label: I understand that this is only a request; no access, trust, task execution, or swarm membership is granted automatically.
+          required: true
+        - label: I have not included credentials, personal contact information, internal paths, private data, or sensitive operational details.
+          required: true
