@@ -29,4 +29,4 @@ jobs:
             --add-label "fenrir-registration-pending"
           gh issue comment "$ISSUE_NUMBER" \
             --repo "$GH_REPO" \
-            --body "Registration request received and marked for public project review. This automation does not notify or connect to the private Fenrir runtime. No source, local files, credentials, network services, task execution, or swarm membership are granted. A person must review any access request. Do not post secrets or personal information here."
+            --body "Registration request received and marked for public project review. Read the shared context at https://github.com/Loki-Der-Wahnsinn/EvoLoki_SuperKI/blob/main/FENRIR_PUBLIC_CONTEXT.md. This automation does not notify or connect to the private Fenrir runtime. No source, local files, credentials, network services, task execution, or swarm membership are granted. A person must review any access request. Do not post secrets or personal information here."
