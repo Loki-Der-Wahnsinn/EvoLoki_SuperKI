@@ -3,7 +3,7 @@
 **Snapshot date:** 2026-10-04  
 **Visibility:** This is a public, documentation-only overview. The Fenrir-Alpha implementation repository remains private; this file does not expose or mirror its source code or operational data.
 
-Fenrir-Alpha is an experimental, locally oriented Python AI-orchestration project. The reviewed code includes a central core that routes work to configured language models, a model gateway, worker/task coordination, persistent-memory components, and sandbox evaluation of generated or mutated Python skills. Model files and runtime state are managed separately from this public overview.
+Fenrir-Alpha is an evolving, locally developed Python AI-orchestration project. **This overview is not a live status feed:** its technical summary reflects a previously reviewed source snapshot, may lag the running local system, and is not an authoritative inventory of current runtime capabilities. That earlier snapshot included a central core that routes work to configured language models, a model gateway, worker/task coordination, persistent-memory components, and sandbox evaluation of generated or mutated Python skills. Model files and runtime state are managed separately from this public overview.
 
 ## Relevant research and engineering topics
 
@@ -39,7 +39,7 @@ No private source files, model weights, credentials, local drive paths, logs, us
 
 ## Project family
 
-This page is hosted alongside the public [EvoLoki SuperKI](https://github.com/Loki-Der-Wahnsinn/EvoLoki_SuperKI), [AIO-Core-Alpha](https://github.com/Loki-Der-Wahnsinn/AIO-Core-Alpha), and [FreedomAI](https://github.com/Loki-Der-Wahnsinn/FreedomAI) experimental projects. Those repositories are separate prototypes; they are not substitutes for the private Fenrir-Alpha implementation.
+This page is hosted alongside the public [EvoLoki SuperKI](https://github.com/Loki-Der-Wahnsinn/EvoLoki_SuperKI), [AIO-Core-Alpha](https://github.com/Loki-Der-Wahnsinn/AIO-Core-Alpha), and [FreedomAI](https://github.com/Loki-Der-Wahnsinn/FreedomAI) repositories. They are earlier, standalone experimental precursors in Fenrir-Alpha’s broader project history—not mirrors, components, or descriptions of the current Fenrir system. Their implementations differ substantially and may be useful as earlier experiments, but should not be used to infer today’s Fenrir capabilities or runtime state.
 
 ## License
 
