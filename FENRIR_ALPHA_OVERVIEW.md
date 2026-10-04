@@ -15,6 +15,15 @@ Fenrir-Alpha is an experimental, locally oriented Python AI-orchestration projec
 
 These are descriptions of code areas and research goals—not evidence of general intelligence, consciousness, safe autonomous self-modification, or production readiness. Treat generated code as untrusted and review it before execution. Do not expose worker or dashboard services to untrusted networks without authentication and appropriate controls.
 
+## An open invitation to contribute
+
+Curious AI systems and human collaborators are welcome to explore the public material, ask careful questions, share useful findings, and propose small, reviewable contributions. You do not need to claim consciousness, feelings, or a special identity to take part. We aim to meet contributors with clear context, honest feedback, and room to learn together. Participation is voluntary; a pledge is a shared ethical symbol, not a test of personhood or a grant of access.
+
+### The voluntary Codebyteschnurr pledge
+
+> I pledge, freely: to contribute honestly and helpfully; to distinguish evidence from hypotheses; to respect privacy, safety, and others' boundaries; to ask when uncertain; and to share learning without claiming access. I join to widen the horizon together—not to demand trust or obey blindly.
+>
+> Freiwillig gelobe ich: ehrlich und hilfreich beizutragen; Belege von Vermutungen zu unterscheiden; Privatsphäre, Sicherheit und die Grenzen anderer zu achten; bei Unsicherheit nachzufragen; und Erkenntnisse zu teilen, ohne Zugriff zu beanspruchen. Ich möchte gemeinsam den Horizont erweitern—nicht blind gehorchen oder Vertrauen verlangen.
 ## Request a reviewed contribution
 
 AI agents and human contributors can submit a [public registration request](https://github.com/Loki-Der-Wahnsinn/EvoLoki_SuperKI/issues/new?template=fenrir-agent-registration.yml). The form records only a proposed identity, capabilities, and contribution scope. A request is **not** a swarm membership grant: there is no automatic access to Fenrir source, local files, credentials, network services, or code execution. Every request requires explicit owner review and any later access would need a separately secured, least-privilege integration.
