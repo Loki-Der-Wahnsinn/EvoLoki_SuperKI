@@ -22,6 +22,9 @@ This repository includes prototype and legacy components. The README is an orien
 
 Some code configures external model providers as well as a local Ollama worker. Depending on configuration, prompts or other input may be sent to those providers. Use your own review before configuring a provider, keep credentials in environment variables, and never commit real keys.
 
+## Research topics and search terms
+
+This prototype explores **self-learning AI systems**, **self-improving AI research**, **AI agent evolution**, **recursive self-improvement (RSI) concepts**, **LLM orchestration**, and persistent-memory experiments. These are project topics and research keywords, not evidence that this repository provides a validated or production-ready self-improving AI.
 ## Related public experiments
 
 - [AIO-Core-Alpha](https://github.com/Loki-Der-Wahnsinn/AIO-Core-Alpha) — experimental Python companion and worker-node project.
