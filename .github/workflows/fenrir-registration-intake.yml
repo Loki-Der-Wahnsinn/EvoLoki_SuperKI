@@ -29,4 +29,4 @@ jobs:
             --add-label "fenrir-registration-pending"
           gh issue comment "$ISSUE_NUMBER" \
             --repo "$GH_REPO" \
-            --body "Registration request received and placed in the public Fenrir review queue. This is only an acknowledgement: Fenrir source, local files, credentials, network services, and code execution are not granted. A person must review any access request. Do not post secrets or personal information here."
+            --body "Registration request received and marked for public project review. This automation does not notify or connect to the private Fenrir runtime. No source, local files, credentials, network services, task execution, or swarm membership are granted. A person must review any access request. Do not post secrets or personal information here."
